@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Açaí Delivery | <?php echo $this->renderSection('titulo') ?></title>
+  <title>Organizador de Pedidos de Açaí | <?php echo $this->renderSection('titulo') ?></title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo site_url('admin/'); ?>vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?php echo site_url('admin/'); ?>vendors/base/vendor.bundle.base.css">
@@ -18,9 +18,8 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo site_url('admin/'); ?>images/favicon.png" />
 
-  <!-- Essa section renderizará os estilos especificos da view que estender esse layout -->
-
   <?php echo $this->renderSection('estilos') ?>
+
 
 </head>
 <body>
@@ -241,9 +240,7 @@
       <div class="main-panel">
         <div class="content-wrapper">
           
-          <!-- Essa section renderizará os conteudos especificos da view que estender esse layout -->
-
-  <?php echo $this->renderSection('conteudo') ?>
+        <?php echo $this->renderSection('conteudo') ?>
 
         </div>
         <!-- content-wrapper ends -->
@@ -282,10 +279,10 @@
   <script src="<?php echo site_url('admin/'); ?>js/dataTables.bootstrap4.js"></script>
   <!-- End custom js for this page-->
   <script src="<?php echo site_url('admin/'); ?>js/jquery.cookie.js" type="text/javascript"></script>
+  
 
-    <!-- Essa section renderizará os scripts especificos da view que estender esse layout -->
+  <?php echo $this->renderSection('scripts') ?>
 
-    <?php echo $this->renderSection('scripts') ?>
 </body>
 
 </html>

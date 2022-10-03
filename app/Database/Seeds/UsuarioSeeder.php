@@ -8,24 +8,26 @@ class UsuarioSeeder extends Seeder
 {
 	public function run()
 	{
-		$usuario_Model = new \App\Models\UsuarioModel;
+		$usuarioModel = new \App\Models\UsuarioModel;
 
 		$usuario = [
 			'nome' => 'Lucio Antonio de Souza',
-			'email'=> 'admin@admin.com',
+			'email' => 'admin@admin.com',
+			'cpf' => '697.588.570-29',
 			'telefone' => '41 - 9999-9999',
 		];
 
-		$usuario_Model->protect(false)->insert($usuario);
+		$usuarioModel->protect(false)->insert($usuario);
 
 		$usuario = [
 			'nome' => 'Fulano de Tal',
-			'email'=> 'fulano@email.com',
+			'email' => 'fulano@email.com',
+			'cpf' => '984.386.620-72',
 			'telefone' => '41 - 8888-9999',
 		];
 
-		$usuario_Model->protect(false)->insert($usuario);
+		$usuarioModel->protect(false)->insert($usuario);
 
-		dd($usuario_Model->errors());
+		dd($usuarioModel->errors());
 	}
 }
