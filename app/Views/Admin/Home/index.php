@@ -10,7 +10,7 @@
 <!-- Aqui enviamos para o template principal os estilos -->
 
 
-    <link  rel="stylesheet" href="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.css'); ?>"/>
+
 
 
 <?php echo $this->endSection(); ?>
