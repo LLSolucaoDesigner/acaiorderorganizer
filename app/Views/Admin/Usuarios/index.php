@@ -9,7 +9,7 @@
 
 <!-- Aqui enviamos para o template principal os estilos -->
 
-<link rel="stylesheet" href="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.css'); ?>"/>
+<link rel="stylesheet" href="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.css'); ?>" />
 
 <?php echo $this->endSection(); ?>
 
@@ -31,6 +31,13 @@
                     <input id="query" name="query" placeholder="Pesquise por um usuário" class="form-control bg-light mb-5">
                 </div>
 
+                <a href="<?php echo site_url("admin/usuarios/criar"); ?>" class="btn btn-success mb-4">
+                    <i class="mdi mdi-plus btn-icon-prepend"></i>
+                    Cadastrar
+
+                </a>
+
+
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -47,7 +54,7 @@
 
                                 <tr>
                                     <td>
-                                        <a href="<?php echo site_url("admin/usuarios/show/$usuario->id"); ?>"><?php echo $usuario->nome; ?></a>            
+                                        <a href="<?php echo site_url("admin/usuarios/show/$usuario->id"); ?>"><?php echo $usuario->nome; ?></a>
                                     </td>
                                     <td><?php echo $usuario->email; ?></td>
                                     <td><?php echo $usuario->cpf; ?></td>
@@ -81,28 +88,26 @@
 <script src="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.js'); ?>"></script>
 
 <script>
-    $(function () {
+    $(function() {
 
         $("#query").autocomplete({
-            source: function (request, response) {
+            source: function(request, response) {
 
                 $.ajax({
 
                     url: "<?php echo site_url('admin/usuarios/procurar'); ?>",
                     dataType: "json",
-                    data:{
+                    data: {
                         term: request.term
                     },
                     success: function(data) {
 
                         if (data.length < 1) {
 
-                            var data = [
-                                {
+                            var data = [{
                                 label: 'Usuario não encontrado',
                                 value: -1
-                            }
-                        ];
+                            }];
 
                         }
 
